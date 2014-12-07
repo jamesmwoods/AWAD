@@ -7,5 +7,9 @@ class StaticController < ApplicationController
   end
 
   def dashboard
+    @activities = Activity.all
+     @educations = Education.all
+     @experiences = Experience.all
+    @qualifications = Qualification.all
   end
 end

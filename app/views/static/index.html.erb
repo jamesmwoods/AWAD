@@ -3,36 +3,30 @@
 <% if !@education.blank? %>
 <h2>Education</h2>
 <% @educations.each do |education| %>
-<ul><li><%= education.date %></li>
-  <li> <%= education.school %></li>
-  <li> <%= education.location %></li>
-  <li> <%= education.award %> </li>
-  <li> <%= education.description %> </li></ul>
+<ul><li>
+  <li> <%= render partial: ‘list’, locals: { education: @education } %> </li></ul>
 <% end %>
 <% end %>
 
 <% if !@experience.blank? %>
 <h2>Work Experience</h2>
 <% @experiences.each do |experience| %>
-<ul><li><%= experience.date %></li>
-  <li> <%= experience.title %></li>
-  <li> <%= experience.company %></li>
-  <li> <%= experience.description %> </li></ul>
+<ul>
+  <li> <%= render partial: ‘list’, locals: { experiences: @experiences } %></li></ul>
 <% end %>
 <% end %>
 
 <% if !@activities.blank? %>
 <h2>Activities and Projects</h2>
 <% @activities.each do |activity| %>
-<ul><li><%= activity.date %></li>
-  <li> <%= activity.title %></li>
-  <li> <%= activity.description %> </li></ul>
+<ul>
+  <li> <%= render partial: ‘list’, locals: { activities: @activities } %> </li></ul>
 <% end %>
 <% end %>
 
 <% if !@qualifications.blank? %>
 <h2>Qualifications</h2>
 <% @qualifications.each do |qualification| %>
-<ul><li> <%= qualification.description %> </li></ul>
+<ul><li> <%= render partial: ‘list’, locals: { qualifications: @qualifications } %> </li></ul>
 <% end %>
 <% end %>
